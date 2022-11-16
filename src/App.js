@@ -14,6 +14,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
 
+  // the function generates the duplicate of cardImages  ,it shuffles the images in the array with sort()
   const shuffleCards = () => {
     const shuffleCards = [...cardImages, ...cardImages]
       .sort(() => {
@@ -27,13 +28,28 @@ function App() {
     setTurns(0);
   };
   console.log(cards, turns);
-  
-  
-  
+
   return (
     <div className="App">
       <h1>Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
+
+      <div className="card-grid">
+        {cards.map((card) => {
+          return (
+            <div className="card" key={card.id}>
+              <div>
+                <img src={card.src} alt="front of the card" className="front" />
+                <img
+                  src="/img/cover.png"
+                  alt="back of the card"
+                  className="back"
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
