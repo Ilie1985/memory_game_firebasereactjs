@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
+import "./Card.css";
 
-const Card = ({cards}) => {
+const Card = ({ card }) => {
   return (
-    <div className="card-grid">
-        {cards.map((card) => {
-          return (
-            <div className="card" key={card.id}>
+    <div className="card" >
               <div>
                 <img src={card.src} alt="front of the card" className="front" />
                 <img
@@ -15,10 +13,7 @@ const Card = ({cards}) => {
                 />
               </div>
             </div>
-          );
-        })}
-      </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
