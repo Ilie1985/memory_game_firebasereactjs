@@ -46,8 +46,8 @@ function App() {
           return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
               return { ...card, matched: true };
-            }else{
-              return card
+            } else {
+              return card;
             }
           });
         });
@@ -74,7 +74,14 @@ function App() {
 
       <div className="card-grid">
         {cards.map((card) => {
-          return <Card key={card.id} card={card} handleChoice={handleChoice} />;
+          return (
+            <Card
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+            />
+          );
         })}
       </div>
     </div>
