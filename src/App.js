@@ -54,8 +54,9 @@ function App() {
 
         resetTurn();
       } else {
-        console.log("thse cards dont match");
-        resetTurn();
+        setTimeout(() => {
+          resetTurn();
+        }, 200);
       }
     }
   }, [choiceOne, choiceTwo]);
