@@ -14,6 +14,8 @@ const cardImages = [
 function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const[choiceOne,setChoiceOne]=useState(null)
+  const[choiceTwo,setChoiceTwo]=useState(null)
 
   // the function generates the duplicate of cardImages  ,it shuffles the images in the array with sort()
   const shuffleCards = () => {
