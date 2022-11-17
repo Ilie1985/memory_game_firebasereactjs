@@ -12,7 +12,7 @@ handleChoice(card)
 
   return (
     <div className="card" >
-              <div>
+              <div className={flipped ? "flipped" : ""}>
                 <img src={card.src} alt="front of the card" className="front" />
                 <img
                   src="/img/cover.png"
