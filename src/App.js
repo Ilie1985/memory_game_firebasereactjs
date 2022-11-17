@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "./App.css";
 
@@ -37,11 +37,19 @@ function App() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-//
+  //compare 2 selected cards
 
-
-
-
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        console.log("those cards match");
+        resetTurn();
+      } else {
+        console.log("thse cards dont match");
+        resetTurn()
+      }
+    }
+  }, [choiceOne, choiceTwo]);
 
   //reset choices & increase turn
   const resetTurn = () => {
