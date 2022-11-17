@@ -56,7 +56,7 @@ function App() {
       } else {
         setTimeout(() => {
           resetTurn();
-        }, 1000);
+        }, 1500);
       }
     }
   }, [choiceOne, choiceTwo]);
