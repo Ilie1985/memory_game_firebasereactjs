@@ -14,8 +14,8 @@ const cardImages = [
 function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
-  const[choiceOne,setChoiceOne]=useState(null)
-  const[choiceTwo,setChoiceTwo]=useState(null)
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
 
   // the function generates the duplicate of cardImages  ,it shuffles the images in the array with sort()
   const shuffleCards = () => {
@@ -30,7 +30,12 @@ function App() {
     setCards(shuffleCards);
     setTurns(0);
   };
-  console.log(cards, turns);
+
+  //handle a choice
+
+  const handleChoice = (card) => {
+    console.log(card);
+  };
 
   return (
     <div className="App">
@@ -39,7 +44,7 @@ function App() {
 
       <div className="card-grid">
         {cards.map((card) => {
-          return <Card  key={card.id} card={card}/>;
+          return <Card key={card.id} card={card} handleChoice={handleChoice} />;
         })}
       </div>
     </div>

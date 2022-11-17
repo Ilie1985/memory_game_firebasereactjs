@@ -1,10 +1,10 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({ card }) => {
+const Card = ({ card,handleChoice }) => {
 
 const handleClick=()=>{
-  
+handleChoice(card)
 }
 
 
