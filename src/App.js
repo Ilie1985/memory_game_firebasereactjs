@@ -16,7 +16,7 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
-  const[disabled,setDisabled]=useState(false)
+  const [disabled, setDisabled] = useState(false);
 
   // the function generates the duplicate of cardImages  ,it shuffles the images in the array with sort()
   const shuffleCards = () => {
@@ -41,9 +41,8 @@ function App() {
   //compare 2 selected cards
 
   useEffect(() => {
-
-    setDisabled(true)
     if (choiceOne && choiceTwo) {
+      setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -69,7 +68,7 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns + 1);
-    setDisabled(false)
+    setDisabled(false);
   };
 
   return (
