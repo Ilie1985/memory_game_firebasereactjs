@@ -2,6 +2,14 @@ import React from "react";
 import "./Card.css";
 
 const Card = ({ card }) => {
+
+const handleClick=()=>{
+  
+}
+
+
+
+
   return (
     <div className="card" >
               <div>
@@ -10,6 +18,7 @@ const Card = ({ card }) => {
                   src="/img/cover.png"
                   alt="back of the card"
                   className="back"
+                  onClick={handleClick}
                 />
               </div>
             </div>
